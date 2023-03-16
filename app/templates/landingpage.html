@@ -204,16 +204,16 @@
         <form id="record-form">
             <div class="tag">
                 {{ form.hidden_tag() }}
-                <!-- <label for="id" id="id-label">Patient Card Number</label>
-                <input type="numbers" id="id" name="id" placeholder="Enter your card number here" required> -->
-                {{ form.card_no.label }}<br>
-                {{ form.card_no(size=32) }}<br>
+                <label for="id" id="id-label">Patient Card Number</label>
+                <!-- <input type="numbers" id="id" name="id" placeholder="Enter your card number here" required> -->
+                <!-- {{ form.card_no.label }}<br> -->
+                {{ form.card_no(placeholder='Enter your card number here') }}<br>
                 {% for error in form.card_no.errors %}
                 <span style="color: red";>[{{ error }}]</span>
                 {% endfor %}
                 <br>
-                <!-- <button type="submit" id="submit" name="submit" value="submit">Submit</button> -->
-                {{ form.submit() }}
+                <button type="submit" id="submit" name="submit" value="submit">Submit</button>
+                <!-- {{ form.submit() }} -->
             </div>
             <a href="{{ url_for('register') }}">Register Now</a>
 
