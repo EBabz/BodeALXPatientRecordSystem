@@ -19,17 +19,16 @@ class RegistrationForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
     phone_number = StringField('Mobile Number', validators=[DataRequired()])
     age = IntegerField('Age', validators=[DataRequired()])
-    address = TextAreaField('Adress', validators=[DataRequired()])
+    address = StringField('Adress', validators=[DataRequired()])
     gender = SelectField(
         'Gender',
-        choices=(('null', 'Select one'), ('male', 'Male'), ('female', 'Female'),
+        choices=(('male', 'Male'), ('female', 'Female'),
                  ('null', 'Prefer not to answer')),
-        validators=[DataRequired()],
+        validators=[DataRequired()]
     )
     employment = SelectField(
         'Employment',
-        choices=(('null', 'Select one'), ('student', 'Student'),
-                 ('employed', 'Employed'),
+        choices=(('student', 'Student'), ('employed', 'Employed'),
                  ('self employed', 'Self Employed'),
                  ('unemployed', 'Unemployed'),
                  ('ful time', 'Full Time Job'), ('part time', 'Part time job'),
